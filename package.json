@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-echo-implementation",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "core-js": "^3.25.3",
+    "laravel-echo": "^1.14.2",
+    "nuxt": "^2.15.8",
+    "pusher-js": "^7.5.0",
+    "vue": "^2.7.10",
+    "vue-echo-laravel": "^1.0.0",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10"
+  },
+  "devDependencies": {}
+}
