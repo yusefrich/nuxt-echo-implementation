@@ -28,7 +28,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: './plugins/ws', mode: 'client' }
+    // { src: './plugins/ws', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -36,7 +36,21 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    ['@nuxtjs/laravel-echo', {
+      broadcaster: 'pusher',
+      key: process.env.WS_KEY,
+      secret: process.env.WS_SECRET,
+      wsHost: process.env.WS_HOST,
+      wsPort: process.env.WS_PORT,
+      wssPort: process.env.WSS_PORT,
+      encrypted: false,
+      disableStats: true,
+      cluster: 'mt1',
+      forceTLS: false,
+      enabledTransports: ['ws', 'wss'],
+      disabledTransports: ['sockjs', 'xhr_polling', 'xhr_streaming']
+    }]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
