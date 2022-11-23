@@ -13,7 +13,7 @@ export default (_, inject) => {
       wssPort: process.env.WSS_PORT,
       encrypted: process.env.WS_ENCRYPTED && process.env.WS_ENCRYPTED === 'true' ? true : false,
       disableStats: process.env.WS_DISABLE_STATS && process.env.WS_DISABLE_STATS === 'true' ? true : false,
-      cluster: 'mt1',
+      cluster: process.env.WS_CLUSTER ? process.env.WS_CLUSTER : 'mt1',
       forceTLS: process.env.WS_FORCE_TLS && process.env.WS_FORCE_TLS === 'true' ? true : false,
       enabledTransports: ['ws', 'wss'],
       disabledTransports: ['sockjs', 'xhr_polling', 'xhr_streaming']
